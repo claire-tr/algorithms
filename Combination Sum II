@@ -1,0 +1,23 @@
+public class Solution {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Arrays.sort(candidates);
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        List<Integer> result = new ArrayList<Integer>();
+        combinationHelper(candidates,0, target, results, result);
+        return results;
+    }
+    private void combinationHelper(int[] candidates,int index, int target, List<List<Integer>> results, List<Integer> result) {
+        if(target < 0) return;
+        if(target == 0) {
+            results.add(new ArrayList<Integer>(result));
+            return;
+        }
+        for(int i = index; i< candidates.length;) { //don't forget
+            result.add(candidates[i]);
+            combinationHelper(candidates, i+1, target-candidates[i], results, result);
+            result.remove(result.size()-1);
+            i++;
+            while(i<candidates.length && candidates[i] == candidates[i-1]) i++;
+        }
+    }
+}
