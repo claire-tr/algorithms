@@ -1,0 +1,26 @@
+//https://leetcode.com/problems/combination-sum-iii/
+
+public class Solution {
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        List<List<Integer>> results = new ArrayList<List<Integer>>();
+        List<Integer> result = new ArrayList<Integer>();
+        combinationHelper(k, n, 1, results, result);
+        return results;
+    }
+    
+    private void combinationHelper(int k, int n, int index, List<List<Integer>> results, List<Integer> result) {
+        //System.out.println(result);
+        if(n < 0) return;
+        if(result.size() == k) {
+            if(n == 0)
+                results.add(new ArrayList<Integer>(result));
+            return;
+        }
+        for(int i = index; i <= 9; i++) {
+            result.add(i);
+            combinationHelper(k, n-i, i+1, results, result);
+            result.remove(result.size()-1);
+        }
+        
+    }
+}
