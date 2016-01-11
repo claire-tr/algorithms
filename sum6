@@ -1,0 +1,43 @@
+/*
+Given an array of ints, return true if it is possible to choose a group of some of the ints, beginning at the start index, such that the group sums to the given target?
+Implement a solution that must include all 6's present, from the start index, in the calculation.
+
+
+groupSum6(0, {5, 6, 2}, 8) → true
+groupSum6(0, {5, 6, 2}, 9) → false
+groupSum6(0, {5, 6, 2}, 7) → false
+groupSum6(0, {5, 3, 2}, 7) → true
+
+*/
+
+
+
+
+public class sum6 {
+	public static boolean sum_6(int start, int[] nums, int target) {
+		int end = start;
+		for(int i = start; i < nums.length; i++) {
+			if(nums[i] != 6) {
+					nums[end++] = nums[i];
+				}
+			else {
+				target -= 6;
+			}
+		}	
+		return helper(nums, start, end, start, target);
+	}
+	private static boolean helper(int[] nums, int start, int end, int index, int target) {
+		if(target == 0) return true;
+		if(target < 0) return false;
+		for(int i = start+1; i < end; i++) {
+			if(helper(nums, start, end, i, target - nums[start]) == true)
+				return true;
+		}
+		return false;
+	}
+	public static void main(String[] args) {
+		int[] nums = {5,3,2};
+		System.out.println(sum_6(0,nums,9));
+	}
+
+}
