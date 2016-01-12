@@ -1,2 +1,2 @@
 # LeetCode-Solutions
-AC Solutions for leetcode.
+Some AC solutions for leetcode.
