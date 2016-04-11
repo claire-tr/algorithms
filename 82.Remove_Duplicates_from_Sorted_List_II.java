@@ -1,9 +1,6 @@
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
+    Use cur instead of next;
+    Double-check the while loop and the outer while loop
  * }
  */
 public class Solution {
