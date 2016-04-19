@@ -24,7 +24,9 @@ public class Palindrome_Linked_List_234 {
                 fast = fast.next.next;
             }
             slow = reverse(slow);
-            if(fast != null)
+            if(fast != null) {
+
+            }
 
             return true;
         }
