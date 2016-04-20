@@ -1,4 +1,4 @@
-public class Solution {
+ class StrStr {
     public int strStr(String haystack, String needle) {
         int l1 = haystack.length(), l2 = needle.length();
         if(l1<l2) return -1;

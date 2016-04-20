@@ -3,7 +3,13 @@
     Double-check the while loop and the outer while loop
  * }
  */
-public class Solution {
+class Remove_Duplicates_From_Sorted_List {
+    public class ListNode {
+        int val;
+        ListNode next;
+        ListNode(int x) { val = x; }
+    }
+
     public ListNode deleteDuplicates(ListNode head) {
         //if(head==null) return head;
         ListNode preHead = new ListNode(0);

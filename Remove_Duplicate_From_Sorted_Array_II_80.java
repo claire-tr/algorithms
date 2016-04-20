@@ -10,6 +10,7 @@ public class Remove_Duplicate_From_Sorted_Array_II_80 {
 
     public int removeDuplicates(int[] nums) {
         int i = 0;
+        String s = "";
         for (int n : nums)
             if (i < 2 || n > nums[i-2])
                 nums[i++] = n;

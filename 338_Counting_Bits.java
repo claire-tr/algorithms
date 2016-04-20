@@ -23,10 +23,11 @@ So now I am going to read posts on the discussion board... :)
   As I go through the posts, this approach seems to be the (only) best approach, so I am gonna implement it by DP
 
 */
-
+class Counting_Bits {
   public int[] countBits(int num) {
-    int[] bits = new int[num + 1];
-    for (int i=1; i<=num; i++) 
-        f[i] = f[i/2] + i%1;
+    int[] f = new int[num + 1];
+    for (int i = 1; i <= num; i++)
+      f[i] = f[i / 2] + i % 1;
     return f;
   }
+}

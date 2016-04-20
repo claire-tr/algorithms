@@ -1,4 +1,4 @@
-public class Solution {
+public class MergeSortedArray {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
         int i1 = m-1, i2 = n-1,i = m+n-1;
         while(i2 >= 0 && i1 >= 0) {

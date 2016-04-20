@@ -1,3 +1,4 @@
+class House_Robber {
     public int rob(int[] nums) {
         /*
         int[][] dp = new int[nums.length+1][2];
@@ -16,3 +17,4 @@
         }
         return Math.max(preNo, preYes);
     }
+}
