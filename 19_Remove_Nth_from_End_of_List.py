@@ -11,18 +11,13 @@ class Solution(object):
         :type n: int
         :rtype: ListNode
         """
-        if not head:
-            return head
-        fast = head
-        slow = head
-        i = 0
-        while i < n:
+        preHead = fast = slow = ListNode(0)
+        preHead.next = head
+        print slow.next.val
+        for i in range(n):
             fast = fast.next
-            i += 1
-        if not fast:
-            return head.next
-        while fast.next:
+        while fast and fast.next:
             fast = fast.next
             slow = slow.next
         slow.next = slow.next.next
-        return head
+        return preHead.next
