@@ -6,25 +6,29 @@
 #         self.right = None
 
 class Solution(object):
-    def levelOrderBottom(self, root):
+    def rightSideView(self, root):
         """
         :type root: TreeNode
-        :rtype: List[List[int]]
+        :rtype: List[int]
         """
+        # BFS
         if not root:
             return []
-
         queue = [root]
         result = []
-
+        level = 0
         while queue:
-            level = []
             for i in range(len(queue)):
                 node = queue.pop(0)
-                if node.left:
-                    queue.append(node.left)
+                if level == len(result):
+                    result.append(node.val)
+                # Add right node first, so the first node is the rightmost node, so don't have to store every node
                 if node.right:
                     queue.append(node.right)
-                level.append(node.val)
-            result.insert(0, level)
+                if node.left:
+                    queue.append(node.left)
+            level += 1
         return result
+
+        # DFS
+

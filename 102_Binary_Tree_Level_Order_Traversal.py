@@ -12,6 +12,8 @@ class Solution(object):
         :rtype: List[List[int]]
         """
 
+        '''
+        BFS
         if not root:
             return []
         result = []
@@ -25,8 +27,24 @@ class Solution(object):
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
-                # level order
                 row.append(node.val)
             result.append(row)
         return result
+        '''
+
+        # Recursion
+        result = []
+        self.addLevel(0, result, root)
+        return result
+
+    def addLevel(self, level, result, root):
+        if not root:
+            return result
+        if level >= len(result):
+            result.append([root.val])
+        else:
+            result[level].append(root.val)
+        self.addLevel(level+1, result, root.left)
+        self.addLevel(level+1, result, root.right)
+
 
