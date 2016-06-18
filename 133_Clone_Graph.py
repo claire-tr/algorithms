@@ -16,7 +16,7 @@ class Solution(object):
         # Undirected, need a dict to store visit status
         # Deep copy
         dic = {}
-        queue = [node,]
+        queue = [node, ]
         dic[node] = UndirectedGraphNode(node.label)
         while queue:
             cur = queue.pop(0)
