@@ -4,9 +4,10 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
+        # return " ".join(s.strip().split()[::-1])
         if not s:
             return ""
-        words = s.split()
+        words = s.strip().split()
         res = ""
         for i in range(len(words)-1, -1, -1):
             if words[i] != " ":
