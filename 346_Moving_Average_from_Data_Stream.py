@@ -1,12 +1,12 @@
 class MovingAverage(object):
-
+    # Use fixed size deque
+    # https://leetcode.com/discuss/100373/4-line-python-solution-using-deque
     def __init__(self, size):
         """
         Initialize your data structure here.
         :type size: int
         """
-        self.size = size
-        self.nums = []
+        self.queue = collections.deque(maxlen=size)
 
 
     def next(self, val):
@@ -14,10 +14,5 @@ class MovingAverage(object):
         :type val: int
         :rtype: float
         """
-        self.nums.append(val)
-        if len(self.nums) == 0:
-            return 0
-        elif len(self.nums) < 3:
-            return float(sum(self.nums))/len(self.nums)
-        else:
-            return float(sum(self.nums[-3:]))/3
+        self.queue.append(val)
+        return float(sum(self.queue))/len(self.queue)
