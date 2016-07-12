@@ -16,15 +16,12 @@ class Solution(object):
             return []
         stack = []
         cur = root
-        while True:
-            if cur:
+        while cur or stack:
+            while cur:
                 stack.append(cur)
                 cur = cur.left
-            elif stack:
-                cur = stack.pop()
-                res.append(cur.val)
-                cur = cur.right
-            else:
-                break
+            cur = stack.pop()
+            res.append(cur.val)
+            cur = cur.right
 
         return res
