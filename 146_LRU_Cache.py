@@ -34,4 +34,11 @@ class LRUCache(object):
             else:
                 self.cache.popitem(last=False)
             self.cache[key] = value
-                
+
+'''
+    Ordered Dict is construct based on double-linked list
+    Double-linked List
+    hash map: <value, linked node>
+    node: val, pre, next
+    https://discuss.leetcode.com/topic/34701/java-easy-version-to-understand
+'''
