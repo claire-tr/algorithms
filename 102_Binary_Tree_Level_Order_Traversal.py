@@ -21,7 +21,8 @@ class Solution(object):
 
         while queue:
             row = []
-            for i in range(len(queue)):
+            l = len(queue)
+            for i in xrange(l):
                 node = queue.pop(0)
                 if node.left:
                     queue.append(node.left)
