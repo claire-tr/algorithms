@@ -39,6 +39,6 @@ class LRUCache(object):
     Ordered Dict is construct based on double-linked list
     Double-linked List
     hash map: <value, linked node>
-    node: val, pre, next
-    https://discuss.leetcode.com/topic/34701/java-easy-version-to-understand
+    node: key, val, pre, next
+    https://discuss.leetcode.com/topic/14591/python-dict-double-linkedlist
 '''
