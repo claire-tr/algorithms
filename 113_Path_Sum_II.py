@@ -23,7 +23,7 @@ class Solution(object):
         sum -= root.val
         if not root.left and not root.right:
             if sum == 0:
-                results.append([p for p in path])
+                results.append(path[::])
                 return
             else:
                 return
@@ -34,5 +34,3 @@ class Solution(object):
             if root.right:
                 self.pathHelper(root.right, path, results, sum)
                 path.pop()
-
-        
