@@ -5,7 +5,8 @@ class Solution(object):
         :rtype: int
         """
         max_pre = min_pre = maxhere = minhere = maxsofar = nums[0]
-        # Because it need to be contiguous, so every max/minhere need to **end at current element***(have to have the current element)
+        # Because it need to be contiguous,
+        # so every max/minhere need to *** end at current element ***(have to have the current element)
         for i in range(1, len(nums)):
             maxhere = max(nums[i], max_pre * nums[i], min_pre * nums[i])
             minhere = min(nums[i], max_pre * nums[i], min_pre * nums[i])
