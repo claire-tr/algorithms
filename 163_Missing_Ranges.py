@@ -8,27 +8,21 @@ class Solution(object):
         """
         res = []
         i, n = 0, lower
-        while n <= upper:
-            if i >= len(nums):
-                if n == upper:
-                    res.append(str(upper))
-                else:
-                    res.append(str(n) + '->' + str(upper))
-                return res
+        if not nums:
+            return [self.getRange(lower, upper)]
+        for i in xrange(len(nums)):
+            if nums[i] != n:
+                res.append(self.getRange(n, nums[i] -1))
+                n = nums[i] + 1
             else:
-                if nums[i] != n:
-                    j = 0
-                    while n + j + 1<= upper and nums[i] != n + j + 1:
-                        j += 1
-                    if j > 0:
-                        res.append(str(n) + '->' + str(n+j))
-                    else:
-                        res.append(str(n))
-                    n = n + j + 1
-                else:
-                    n += 1
-                    i += 1
-
+                n += 1
+        if nums[-1] != upper:
+            res.append(self.getRange(n, upper))
         return res
 
-
+    def getRange(self, n1, n2):
+        # don't need to implement everytime
+        if n1 == n2:
+            return str(n1)
+        else:
+            return "%s->%s" % (n1, n2)
