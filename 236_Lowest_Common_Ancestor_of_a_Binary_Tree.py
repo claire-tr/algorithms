@@ -4,6 +4,7 @@ class TreeNode(object):
         self.left = None
         self.right = None
 
+
 class Solution(object):
     def lowestCommonAncestor(self, root, p, q):
         """
