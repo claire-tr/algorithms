@@ -6,6 +6,23 @@
 #         self.right = None
 
 class Solution(object):
+    def longestConsecutive_Iterative(self, root):
+        """
+        :type root: TreeNode
+        :rtype: int
+        """
+        if not root:
+            return 0
+        ans, stack = 0, [(root, 1)]
+        while stack:
+            node, length = stack.pop()
+            ans = max(ans, length)
+            for child in [node.left, node.right]:
+                if child:
+                    l = length + 1 if child.val == node.val +1 else 1
+                    stack.append((child, l))
+        return ans
+    
     def longestConsecutive(self, root):
         """
         :type root: TreeNode
