@@ -4,8 +4,10 @@
 # @param b, person b
 # @return a boolean, whether a knows b
 
+
 def knows(a, b):
     pass
+
 
 class Solution(object):
     def findCelebrity(self, n):
