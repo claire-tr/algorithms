@@ -27,9 +27,24 @@ class Solution(object):
         for i in xrange(1, m + 1):
             for j in xrange(1, n + 1):
                 if p[j - 1] != '*':
+                    print s[i-1], p[i-1]
+
                     dp[i][j] = dp[i-1][j-1] and (s[i-1] == p[j-1] or p[j-1] == '.')
+                    for d in dp:
+                        print d
+                    print '-' * 20
                 else:
                     # p[0] cannot be '*'
                     dp[i][j] = dp[i][j-2] or ((s[i-1] == p[j-2] or p[j-2] == '.') and dp[i-1][j])
+                    print s[i-1], p[i-1]
+                    for d in dp:
+                        print d
+                    print '-' * 20
 
+        for d in dp:
+            print d
         return dp[m][n]
+
+if __name__ == '__main__':
+    s = Solution()
+    print s.isMatch('aaaaa','a*')
